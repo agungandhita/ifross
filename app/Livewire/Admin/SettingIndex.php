@@ -81,9 +81,9 @@ class SettingIndex extends Component
     }
 
     #[On('deleteSetting')]
-    public function delete(string $key, SettingServiceInterface $settingService): void
+    public function delete(string $id, SettingServiceInterface $settingService): void
     {
-        $settingService->delete($key);
+        $settingService->delete($id);
         $this->dispatch('swal:success', [
             'title' => 'Berhasil!',
             'text' => 'Setting berhasil dihapus!'
