@@ -49,7 +49,7 @@ class SettingForm extends Form
         $this->key         = $setting->key;
         $this->value       = $setting->value;
         $this->label       = $setting->label;
-        $this->type        = $setting->type;
+        $this->type        = $setting->type instanceof SettingType ? $setting->type->value : (string) $setting->type;
         $this->group       = $setting->group;
         $this->description = $setting->description;
     }
